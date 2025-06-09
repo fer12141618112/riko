@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cuidado del Medio Ambiente</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .banner {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 32px;
+      font-weight: bold;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .botonera {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #66bb6a;
+      padding: 15px;
+      position: fixed;
+      top: 100px;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .botonera button {
+      background-color: #81c784;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .botonera button:hover {
+      background-color: #4caf50;
+    }
+
+    .contenido {
+      margin-top: 180px;
+      padding: 20px;
+      background-image: url('fondo.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-height: calc(100vh - 180px);
+    }
+
+    .contenido h2 {
+      text-align: center;
+      color: #1b5e20;
+    }
+
+    .contenido p {
+      background-color: rgba(255, 255, 255, 0.85);
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 17px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .contenido img,
+    .contenido video,
+    .contenido audio {
+      max-width: 90%;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
+    .oculto {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    CUIDADO Y PRESERVACIÓN DEL MEDIO AMBIENTE
+  </div>
+
+  <div class="botonera">
+    <button onclick="mostrar('menu')">Menú</button>
+    <button onclick="mostrar('reforestacion')">Reforestación</button>
+    <button onclick="mostrar('limpieza_institucional')">Limpieza Institucional</button>
+    <button onclick="mostrar('limpieza_externa')">Limpieza Externa</button>
+    <button onclick="mostrar('flora_fauna')">Flora y Fauna</button>
+  </div>
+
+  <div class="contenido">
+    <div id="menu" class="visible">
+      <h2>Menú Principal</h2>
+      <p>Bienvenido a nuestro sitio dedicado al cuidado del medio ambiente. Descubre acciones prácticas para proteger la naturaleza y mejorar nuestro entorno.</p>
+      <img src="gif1.gif" alt="Animación ecológica">
+    </div>
+
+    <div id="reforestacion" class="oculto">
+      <h2>Reforestación</h2>
+      <p>La reforestación ayuda a combatir el cambio climático y restaurar ecosistemas. Plantar árboles es una acción simple con un gran impacto ambiental.</p>
+      <audio controls>
+        <source src="audio1.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </div>
+
+    <div id="limpieza_institucional" class="oculto">
+      <h2>Limpieza Institucional</h2>
+      <p>Limpiar la escuela es una forma de cuidar nuestro espacio de aprendizaje. Promueve la conciencia y la responsabilidad colectiva.</p>
+      <img src="imagen1.jpg" alt="Limpieza institucional">
+    </div>
+
+    <div id="limpieza_externa" class="oculto">
+      <h2>Limpieza Externa</h2>
+      <p>Realizamos limpieza en áreas externas como jardines, banquetas y parques escolares, mejorando el entorno para todos.</p>
+      <img src="imagen2.jpg" alt="Limpieza comunitaria">
+    </div>
+
+    <div id="flora_fauna" class="oculto">
+      <h2>Flora y Fauna</h2>
+      <p>Conocer y proteger la flora y fauna local es fundamental para preservar la biodiversidad. Cada especie cumple un papel importante.</p>
+      <video controls>
+        <source src="video1.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+      </video>
+    </div>
+  </div>
+
+  <script>
+    function mostrar(id) {
+      const secciones = document.querySelectorAll('.contenido > div');
+      secciones.forEach(div => {
+        div.classList.remove('visible');
+        div.classList.add('oculto');
+      });
+      document.getElementById(id).classList.remove('oculto');
+      document.getElementById(id).classList.add('visible');
+    }
+  </script>
+
+</body>
+</html>
